@@ -1,0 +1,21 @@
+product_id,product_name,category,unit_cost,selling_price,supplier_id,warehouse_id
+PROD001,Industrial Pump,Equipment,185000,240000,SUP005,WH001
+PROD002,Electric Motor,Equipment,320000,410000,SUP005,WH001
+PROD003,Steel Pipe,Piping,95000,125000,SUP002,WH002
+PROD004,PVC Pipe,Piping,42000,58000,SUP002,WH002
+PROD005,Hydraulic Hose,Components,28000,40000,SUP003,WH003
+PROD006,Control Valve,Components,125000,165000,SUP003,WH003
+PROD007,Pressure Gauge,Instrumentation,35000,48000,SUP003,WH003
+PROD008,Bearing,Components,18000,25000,SUP003,WH003
+PROD009,Lubricant,Chemicals,12000,17000,SUP004,WH004
+PROD010,Safety Helmet,Safety,8500,12000,SUP001,WH001
+PROD011,Work Gloves,Safety,3500,5000,SUP001,WH001
+PROD012,Safety Boots,Safety,22000,30000,SUP001,WH001
+PROD013,Packaging Box,Packaging,1800,2500,SUP001,WH004
+PROD014,Plastic Container,Packaging,2500,3500,SUP001,WH004
+PROD015,Cleaning Chemical,Chemicals,15000,21000,SUP004,WH004
+PROD016,Water Treatment Chemical,Chemicals,24000,34000,SUP004,WH004
+PROD017,Filter Cartridge,Components,9500,13500,SUP003,WH003
+PROD018,Electrical Cable,Electrical,28000,38000,SUP003,WH003
+PROD019,Switch Gear,Electrical,145000,190000,SUP005,WH001
+PROD020,Industrial Fan,Equipment,75000,100000,SUP005,WH001

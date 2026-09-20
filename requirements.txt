@@ -1,0 +1,36 @@
+# Supply Chain Data Analyst Portfolio
+# Python 3.13+
+
+# Data manipulation and numerical analysis
+pandas
+numpy
+scipy
+
+# Data visualization
+matplotlib
+seaborn
+plotly
+
+# Statistical analysis and forecasting
+statsmodels
+scikit-learn
+prophet
+pmdarima
+statsforecast
+
+# Machine learning
+xgboost
+lightgbm
+
+# Database and SQL analytics
+sqlalchemy
+duckdb
+
+# Optimization
+pulp
+
+# Excel and notebook support
+openpyxl
+jupyter
+jupyterlab
+ipykernel

@@ -1,389 +1,499 @@
-# Supply-Chain-Data-Analyst
-End-to-end supply chain data analysis projects using Python, SQL, Excel, and Power BI, covering inventory optimization, demand planning, procurement, logistics, forecasting, and supply chain performance KPIs.
-# Supply Chain Data Analysis
+# Project 1 — Supply Chain Inventory & Demand Planning Analytics
 
-A portfolio of **data-driven supply chain analysis projects** focused on using analytics to improve inventory management, demand planning, procurement, logistics, and overall supply chain performance.
+## Client Case Study: Nexora Industrial Supply & Services Ltd.
 
-This repository demonstrates practical application of **Python, SQL, Excel, and data visualization** to solve supply chain problems and support data-driven decision-making.
+> **Note:** Nexora Industrial Supply & Services Ltd. (NISSL) is a fictitious company created for this portfolio project. The dataset is synthetic and is intended to demonstrate supply-chain analytics methods and business decision-making.
 
 ---
 
-## 📌 Objectives
+## 1. Company Context
 
-The main objectives of this portfolio are to:
+### About Nexora Industrial Supply & Services Ltd.
 
-* Analyze supply chain performance using real-world and simulated datasets.
-* Identify inventory inefficiencies and stockout risks.
-* Support demand planning and forecasting.
-* Analyze procurement and supplier performance.
-* Optimize inventory levels and replenishment decisions.
-* Measure logistics and fulfillment performance.
-* Build reusable analytical models and Python functions.
-* Transform raw supply chain data into actionable insights.
-* Develop dashboards and visualizations for decision-making.
+Nexora Industrial Supply & Services Ltd. (NISSL) is a fictitious industrial supply and distribution company serving customers that require a broad range of operational materials and industrial products.
 
----
+Its portfolio includes:
 
-## 🧰 Tools & Technologies
+* Industrial equipment
+* Mechanical components
+* Electrical materials
+* Piping materials
+* Chemicals
+* Safety equipment
+* Packaging materials
+* Instrumentation products
 
-| Tool                 | Application                                      |
-| -------------------- | ------------------------------------------------ |
-| **Python**           | Data cleaning, analysis, modeling and automation |
-| **Pandas**           | Data manipulation and analysis                   |
-| **NumPy**            | Numerical analysis                               |
-| **Matplotlib**       | Data visualization                               |
-| **Seaborn**          | Exploratory data analysis                        |
-| **SQL**              | Data extraction, transformation and analysis     |
-| **Excel**            | Supply chain calculations and analysis           |
-| **Power BI**         | Interactive dashboards and reporting             |
-| **Jupyter Notebook** | Analysis and documentation                       |
-| **VS Code**          | Development environment                          |
-| **Git & GitHub**     | Version control and portfolio management         |
+NISSL operates **four warehouses** and works with **five suppliers** to meet customer demand.
+
+As the company expands its operations, management has identified challenges involving inventory availability, customer fulfillment, supplier reliability, procurement concentration, and demand planning.
+
+The management team has commissioned a supply-chain analytics project to provide evidence-based insights that can support inventory, procurement, and demand-planning decisions.
 
 ---
 
-## 📊 Supply Chain Analysis Areas
+# 2. Business Problem
 
-### 1. Inventory Analysis
+NISSL is experiencing a gap between **customer demand, inventory availability, supplier performance, and replenishment planning**.
 
-Projects will examine:
+During the analysis period, customers ordered **281,903 units**, but only **263,663 units were fulfilled**, leaving **18,240 units of unfulfilled demand** and an overall fill rate of **93.53%**.
 
-* Economic Order Quantity (EOQ)
-* Safety Stock
-* Reorder Point (ROP)
-* Reorder Quantity
-* ABC Analysis
-* Inventory Turnover
-* Days Inventory Outstanding
-* Stockout Analysis
-* Excess and Obsolete Inventory
-* Service Level
-* Fill Rate
-* Inventory Carrying Cost
-* Lead-Time Analysis
+At the same time, the company faces several interconnected supply-chain challenges:
 
-### 2. Demand Planning & Forecasting
+### Inventory availability
 
-Analysis may include:
+The company recorded **146 stockout records**, indicating recurring inventory availability issues.
 
-* Historical demand analysis
-* Demand variability
-* Moving averages
-* Weighted moving averages
-* Exponential smoothing
-* Demand forecasting
-* Forecast accuracy
-* Forecast bias
-* Mean Absolute Error (MAE)
-* Mean Absolute Percentage Error (MAPE)
-* Root Mean Squared Error (RMSE)
+### Demand concentration
 
-### 3. Procurement Analytics
+Demand is concentrated among a relatively small number of products:
 
-Analysis of:
+* Top 3 products: **40.10% of total demand**
+* Top 5 products: **53.70%**
+* Top 10 products: **78.39%**
 
-* Supplier performance
-* Purchase orders
-* Supplier lead time
-* Purchase price variance
-* Procurement cycle time
-* On-time delivery
-* Supplier quality
-* Supplier reliability
-* Spend analysis
-* Procurement trends
+A disruption affecting high-volume products can therefore have a disproportionate effect on customer fulfillment.
 
-### 4. Logistics & Distribution
+### Inventory investment
 
-Analysis of:
+High-value products create substantial inventory investment. Equipment represents approximately **33.6% of total inventory value**, creating a need to balance product availability with working-capital efficiency.
 
-* Order fulfillment
-* On-time delivery
-* In-full delivery
-* OTIF
-* Transportation performance
-* Delivery lead time
-* Warehouse performance
-* Shipment volumes
-* Distribution efficiency
-* Logistics cost
+### Demand variability
 
-### 5. Supply Chain KPIs
+Demand variability differs substantially across products. Products with high demand variability require more careful safety-stock and replenishment planning than products with relatively stable demand.
 
-Key performance indicators include:
+### Supplier performance
 
-* Inventory Turnover
-* Fill Rate
-* Service Level
-* Stockout Rate
-* OTIF
-* On-Time Delivery
-* Order Fulfillment Rate
-* Forecast Accuracy
-* Forecast Bias
-* Supplier Lead Time
-* Purchase Price Variance
-* Carrying Cost
-* Days of Inventory
-* Perfect Order Rate
+Supplier performance varies considerably:
+
+* On-time delivery: approximately **53.8%–84.1%**
+* Average lead time: approximately **6.9–21.0 days**
+
+Longer or less predictable supplier lead times increase replenishment uncertainty.
+
+### Procurement concentration
+
+One supplier accounts for approximately **57.1% of procurement spend**, creating a significant concentration that management should monitor as part of procurement-risk planning.
+
+### Forecasting and replenishment
+
+Historical demand fluctuations make simple demand assumptions insufficient for planning future inventory requirements. NISSL needs a structured approach that connects:
+
+**Demand Forecast → Safety Stock → Reorder Point → Supplier Lead Time → Replenishment Decision**
+
 ---
 
-## 📈 Example Projects
+# 3. Business Impact
 
-### Inventory Optimization
+If these issues are not effectively managed, NISSL may experience:
 
-Analyze SKU-level inventory data to determine:
+* Lost or delayed customer orders
+* Lower service levels
+* Increased stockout frequency
+* Emergency procurement
+* Higher logistics and expedited-delivery costs
+* Excess inventory
+* Increased working-capital requirements
+* Greater exposure to supplier disruptions
+* Inefficient replenishment decisions
+* Poor alignment between procurement and actual demand
 
-* ABC classification
-* EOQ
+The analytical objective is therefore not simply to measure inventory performance, but to help management understand **where supply-chain performance is deteriorating, why it may be occurring, and where intervention should be prioritized.**
+
+---
+
+# 4. Project Objectives
+
+The project aims to:
+
+### Objective 1 — Establish Data Reliability
+
+Validate the quality, completeness, consistency, and integrity of the supply-chain datasets before conducting business analysis.
+
+### Objective 2 — Understand Demand and Fulfillment
+
+Analyze demand patterns across products, categories, warehouses, and time periods and measure customer fulfillment performance.
+
+### Objective 3 — Evaluate Inventory Performance
+
+Assess inventory value, turnover, days of inventory, demand variability, stockout exposure, and inventory concentration.
+
+### Objective 4 — Optimize Replenishment
+
+Apply inventory-management techniques including:
+
+* ABC analysis
 * Safety stock
 * Reorder point
+* Economic Order Quantity
+* Inventory-position analysis
+
+to support more structured replenishment decisions.
+
+### Objective 5 — Evaluate Supplier Performance
+
+Measure supplier spend, delivery reliability, lead time, lead-time variability, and stockout exposure.
+
+### Objective 6 — Develop Demand Forecasts
+
+Compare statistical forecasting techniques and evaluate their ability to predict future demand.
+
+### Objective 7 — Translate Analytics into Decisions
+
+Convert analytical results into practical recommendations for inventory management, procurement, supplier management, and demand planning.
+
+---
+
+# 5. Business Questions
+
+The analysis is designed to answer five groups of management questions.
+
+## A. Demand & Customer Fulfillment
+
+1. What products generate the highest customer demand?
+2. Which product categories contribute most to total demand?
+3. How concentrated is demand across the portfolio?
+4. What is the company's overall fill rate?
+5. Which products have the highest unfulfilled demand?
+6. Which warehouses experience the greatest demand and fulfillment pressure?
+7. Which months show unusually high demand or weaker fulfillment?
+
+## B. Inventory Management
+
+8. Which products and categories represent the greatest inventory investment?
+9. Which products have the highest and lowest inventory turnover?
+10. Which products exhibit the greatest demand variability?
+11. Which products require greater safety-stock protection?
+12. What are the modeled reorder points for each product?
+13. Which products require replenishment monitoring?
+14. What order quantities are suggested by the EOQ model?
+15. Which inventory items represent the greatest combined demand, value, and replenishment risk?
+
+## C. Supplier & Procurement
+
+16. Which suppliers account for the largest procurement spend?
+17. How concentrated is procurement spending?
+18. Which suppliers have the longest lead times?
+19. Which suppliers have the greatest lead-time variability?
+20. Which suppliers have the lowest on-time delivery performance?
+21. What level of stockout exposure is associated with each supplier's products?
+22. Where should procurement teams increase supplier-performance monitoring?
+
+## D. Demand Forecasting
+
+23. What patterns are visible in historical demand?
+24. How accurately can future demand be predicted?
+25. How do moving average, weighted moving average, exponential smoothing, and ARIMA compare?
+26. Which model produces the lowest forecast error on the selected test period?
+27. What demand should the company plan for over the next three months?
+28. How can forecasts be incorporated into inventory and replenishment decisions?
+
+## E. Management Decision Support
+
+29. Which products require greater replenishment attention?
+30. Which supply-chain areas require closer monitoring?
+31. Where are the major procurement and supplier dependencies?
+32. How can demand, inventory, procurement, and supplier data be integrated into a management dashboard?
+33. What analytical framework can NISSL use to continuously monitor supply-chain performance?
+
+---
+
+# 6. Data & Scope
+
+The project uses a synthetic operational dataset representing NISSL's supply-chain activities.
+
+| Dataset         | Records | Purpose                           |
+| --------------- | ------: | --------------------------------- |
+| Suppliers       |       5 | Supplier and procurement analysis |
+| Products        |      20 | Product master data               |
+| Inventory       |   7,300 | Inventory and stockout analysis   |
+| Sales           |   7,300 | Demand and fulfillment analysis   |
+| Purchase Orders |     200 | Supplier and lead-time analysis   |
+
+### Analytical Scope
+
+The analysis covers:
+
+* **20 products**
+* **8 product categories**
+* **4 warehouses**
+* **5 suppliers**
+* **200 purchase orders**
+* **12 months of demand/inventory activity**
+
+---
+
+# 7. Analytical Framework
+
+The project follows an end-to-end supply-chain analytics workflow:
+
+```text
+                    BUSINESS PROBLEM
+                          │
+                          ▼
+                   DATA VALIDATION
+                          │
+                          ▼
+               EXPLORATORY DATA ANALYSIS
+                          │
+          ┌───────────────┼───────────────┐
+          ▼               ▼               ▼
+       DEMAND         INVENTORY       SUPPLIERS
+          │               │               │
+          └───────────────┼───────────────┘
+                          ▼
+                 DEMAND FORECASTING
+                          │
+                          ▼
+              REPLENISHMENT PLANNING
+                          │
+                          ▼
+                 BUSINESS INSIGHTS
+                          │
+                          ▼
+                  RECOMMENDATIONS
+```
+
+---
+
+# 8. Analytical Methods
+
+## Data Quality & Validation
+
+* Missing-value analysis
+* Duplicate detection
+* Primary-key validation
+* Inventory reconciliation
+* Quantity validation
+* Date validation
+* Lead-time validation
+* Stockout consistency checks
+
+## Demand Analytics
+
+* Descriptive statistics
+* Product demand analysis
+* Category analysis
+* Warehouse analysis
+* Monthly demand trends
+* Demand concentration
+* Fill rate
+* Unfulfilled demand
+
+## Inventory Analytics
+
+* Inventory valuation
+* ABC classification
 * Inventory turnover
-* Stockout risk
-* Recommended replenishment strategy
+* Days Inventory
+* Demand variability
+* Coefficient of variation
+* Safety stock
+* Reorder point
+* EOQ
+* Inventory position
+* Replenishment monitoring
+* Inventory risk screening
+
+## Supplier Analytics
+
+* Procurement spend
+* Spend concentration
+* Average lead time
+* Lead-time variability
+* On-time delivery
+* Late delivery
+* Supplier stockout exposure
+* Supplier risk indicators
+
+## Forecasting
+
+* Three-month moving average
+* Weighted moving average
+* Simple exponential smoothing
+* ARIMA
+* MAE
+* RMSE
+* MAPE
+* Chronological train/test validation
+
+---
+
+# 9. Key Performance Indicators
+
+| KPI                     |            Result |
+| ----------------------- | ----------------: |
+| Total ordered demand    | **281,903 units** |
+| Total fulfilled demand  | **263,663 units** |
+| Unfulfilled demand      |  **18,240 units** |
+| Overall fill rate       |        **93.53%** |
+| Unfulfilled demand rate |         **6.47%** |
+| Stockout records        |           **146** |
+| Products                |            **20** |
+| Suppliers               |             **5** |
+| Warehouses              |             **4** |
+| Purchase orders         |           **200** |
+
+---
+
+# 10. Key Analytical Findings
+
+## Demand Concentration
+
+Demand is highly concentrated:
+
+* Top 3 products = **40.10%**
+* Top 5 products = **53.70%**
+* Top 10 products = **78.39%**
+
+This indicates that inventory availability for high-volume products deserves particular management attention.
+
+## Customer Fulfillment
+
+The overall fill rate is **93.53%**, with **18,240 units** of demand unfulfilled.
+
+Packaging Box recorded the highest unfulfilled quantity at **3,977 units**.
+
+Electric Motor recorded the lowest product-level fill rate at **88.61%**.
+
+## Inventory
+
+Equipment represents approximately **33.6% of inventory value**.
+
+ABC analysis classified the portfolio as:
+
+| Class | Products | Consumption Value Share |
+| ----- | -------: | ----------------------: |
+| A     |       11 |                  77.62% |
+| B     |        5 |                  15.54% |
+| C     |        4 |                   6.84% |
+
+The analysis demonstrates that high physical demand does not necessarily mean high financial importance.
+
+## Supplier Performance
+
+Procurement spend is concentrated with SUP005 at approximately **57.1%**.
+
+Supplier on-time delivery varies from approximately **53.8% to 84.1%**, while average lead times range from approximately **6.9 to 21.0 days**.
+
+## Forecasting
+
+The three-month moving average produced the lowest error on the selected test period:
+
+* **MAE:** 3,111 units
+* **RMSE:** 3,464 units
+* **MAPE:** 12.25%
+
+The selected model forecasts approximately **24,708 units per month** for January–March 2026.
+
+---
+
+# 11. Management Recommendations
+
+Based on the analysis, NISSL should consider:
+
+### Inventory
+
+* Prioritize high-demand and high-value products.
+* Establish differentiated inventory policies using ABC classification.
+* Monitor products with low inventory coverage.
+* Incorporate demand variability into safety-stock decisions.
+* Review products whose inventory positions fall below modeled reorder points.
+
+### Procurement
+
+* Monitor procurement concentration.
+* Evaluate supplier dependency and alternative sourcing options where appropriate.
+* Incorporate supplier lead time into replenishment planning.
+
+### Supplier Management
+
+* Establish supplier-performance monitoring.
+* Track on-time delivery and lead-time variability.
+* Investigate recurring late deliveries.
+* Monitor supplier-associated stockout exposure while recognizing that association does not establish causation.
 
 ### Demand Planning
 
-Analyze historical demand to:
+* Use forecasting as an input to replenishment planning.
+* Continuously monitor forecast accuracy.
+* Progress from portfolio-level forecasting toward product- and warehouse-level forecasts.
+* Incorporate seasonality and demand uncertainty as additional historical data becomes available.
 
-* Identify demand patterns
-* Calculate demand variability
-* Build forecasts
-* Measure forecast accuracy
-* Identify forecast bias
-* Support inventory planning
+### Decision Support
 
-### Supplier Performance
+Develop a supply-chain management dashboard combining:
 
-Evaluate suppliers based on:
-
-* On-time delivery
-* Lead time
-* Quality performance
-* Order fulfillment
-* Purchase price
-* Reliability
-
-### Logistics Performance
-
-Analyze delivery data to determine:
-
-* On-time delivery rate
-* OTIF
-* Average delivery lead time
-* Order fulfillment rate
-* Transportation performance
-* Distribution bottlenecks
+**Demand + Inventory + Suppliers + Procurement + Forecasts + Fulfillment**
 
 ---
 
-## 🔬 Analytical Methods
+# 12. Limitations & Assumptions
 
-The portfolio will apply practical supply chain models such as:
+This project uses a synthetic dataset and is intended to demonstrate analytical capability rather than represent an actual company's operational performance.
 
-### Economic Order Quantity
+Key assumptions include:
 
-$$
-EOQ = \sqrt{\frac{2DS}{H}}
-$$
-
-Where:
-
-* **D** = Annual demand
-* **S** = Ordering cost per order
-* **H** = Annual holding cost per unit
-
-### Reorder Point
-
-$$
-ROP = (Average\ Demand \times Lead\ Time) + Safety\ Stock
-$$
-
-### Inventory Turnover
-
-$$
-Inventory\ Turnover =
-\frac{Cost\ of\ Goods\ Sold}{Average\ Inventory}
-$$
-
-### Fill Rate
-
-$$
-Fill\ Rate =
-\frac{Units\ Supplied}{Units\ Ordered} \times 100
-$$
-
-### On-Time Delivery
-
-$$
-OTD =
-\frac{Orders\ Delivered\ On\ Time}
-{Total\ Orders} \times 100
-$$
+* 95% service-level assumption for safety-stock calculations.
+* ₦10,000 assumed ordering cost for EOQ.
+* 20% annual holding-rate assumption for EOQ.
+* Simplified safety-stock methodology.
+* Limited forecasting history and a three-month test period.
+* Open purchase-order commitments are not fully incorporated into the inventory-gap assessment.
+* Negative inventory gaps are treated as **replenishment-monitoring signals**, not definitive evidence of understocking.
+* Supplier-associated stockouts do not establish supplier causation.
 
 ---
 
-## 📊 Analysis Workflow
+# 13. Project Deliverables
 
-Each project generally follows this workflow:
+The project is organized into five analytical notebooks:
 
-```text
-Raw Data
-   ↓
-Data Cleaning
-   ↓
-Exploratory Data Analysis
-   ↓
-KPI Calculation
-   ↓
-Supply Chain Modeling
-   ↓
-Visualization
-   ↓
-Insights
-   ↓
-Recommendations
+| Notebook                             | Analysis                                  |
+| ------------------------------------ | ----------------------------------------- |
+| `01_data_quality_check.ipynb`        | Data validation and reconciliation        |
+| `02_exploratory_data_analysis.ipynb` | Demand, fulfillment and stockout analysis |
+| `03_inventory_analysis.ipynb`        | Inventory optimization and replenishment  |
+| `04_supplier_analysis.ipynb`         | Supplier and procurement analytics        |
+| `05_Demand_Forecasting.ipynb`        | Forecasting and demand planning           |
 
 ---
 
-## 🐍 Python Approach
+# 14. Tools & Technologies
 
-Python will be used to develop reusable analytical functions rather than repeating calculations manually.
+### Programming & Data Analysis
 
-Example:
+Python · Pandas · NumPy · SciPy · Statsmodels · Scikit-learn
 
-```python
-def calculate_inventory_turnover(cogs, average_inventory):
-    return cogs / average_inventory
-```
+### Visualization
 
-Reusable functions will be developed for metrics such as:
+Matplotlib · Seaborn · Plotly
 
-* EOQ
-* Safety Stock
-* Reorder Point
-* Inventory Turnover
-* Fill Rate
-* Stockout Rate
-* Service Level
-* Forecast Accuracy
-* OTIF
-* Lead Time
+### Supply Chain Analytics
+
+ABC Analysis · EOQ · Safety Stock · Reorder Point · Inventory Turnover · Demand Variability · Fill Rate · Stockout Analysis · Supplier Performance · Demand Forecasting
+
+### Development & Version Control
+
+VS Code · Jupyter Notebook · Git · GitHub
+
+### Planned Extensions
+
+SQL · Power BI · Tableau · Machine Learning · Optimization
 
 ---
 
-## 🗄️ SQL Analysis
+# 15. Project Outcome
 
-SQL projects will focus on extracting and transforming supply chain data from relational databases.
+This project demonstrates an end-to-end approach to **supply-chain data analytics**, moving from raw operational data through validation, exploratory analysis, inventory modeling, supplier evaluation, forecasting, and management recommendations.
 
-Example analytical questions:
+The primary analytical objective is to help management balance four competing priorities:
 
-```sql
--- Which products have the highest inventory value?
+**Customer Service**
+↕
+**Inventory Availability**
+↕
+**Working Capital**
+↕
+**Supply Risk**
 
-SELECT
-    product_id,
-    SUM(quantity * unit_cost) AS inventory_value
-FROM inventory
-GROUP BY product_id
-ORDER BY inventory_value DESC;
-```
-
-Other SQL analysis will include:
-
-* SKU performance
-* Supplier performance
-* Purchase orders
-* Inventory movements
-* Stockouts
-* Customer orders
-* Delivery performance
-* Monthly trends
-
----
-
-## 📊 Dashboards
-
-Tableau dashboards will be developed to communicate supply chain performance to decision-makers.
-
-Potential dashboard pages include:
-
-**Executive Overview**
-
-* Total inventory value
-* Inventory turnover
-* Service level
-* Fill rate
-* OTIF
-* Stockout rate
-
-**Inventory**
-
-* ABC analysis
-* Inventory by SKU
-* Slow-moving inventory
-* Excess inventory
-* Reorder alerts
-
-**Procurement**
-
-* Supplier performance
-* Spend
-* Lead time
-* Purchase price variance
-
-**Logistics**
-
-* Delivery performance
-* OTIF
-* Transportation trends
-* Order fulfillment
-
----
-
-## 💡 Business Questions
-
-The projects will focus on questions such as:
-
-1. Which products contribute most to inventory value?
-2. Which SKUs are at risk of stockout?
-3. Which products are overstocked?
-4. What is the optimal reorder quantity?
-5. How much safety stock is required?
-6. Which suppliers consistently deliver late?
-7. What is the average supplier lead time?
-8. How accurate is the demand forecast?
-9. What factors are driving inventory growth?
-10. Where are the major supply chain bottlenecks?
-11. How can service levels be improved?
-12. How can inventory carrying costs be reduced?
-
----
-
-## 🎯 Portfolio Goal
-
-This repository is being developed as a practical **Supply Chain Data Analytics portfolio** demonstrating the ability to:
-
-> **Collect → Clean → Analyze → Model → Visualize → Interpret → Recommend**
-
----
-
-## 🚀 Future Development
-
-Planned additions include:
-
-* Advanced demand forecasting
-* Machine learning for demand prediction
-* Supplier risk scoring
-* Inventory optimization
-* ABC-XYZ analysis
-* Network optimization
-* Predictive stockout modeling
-* Scenario analysis
-* Automated reporting
-* Interactive Power BI dashboards
-* SQL-based supply chain data warehouse projects
-
-## 📜 License
-
-This repository is intended for educational, portfolio, and professional development purposes.
+The project demonstrates how a Supply Chain Data Analyst can transform operational data into **measurable KPIs, analytical insights, forecasting outputs, and decision-support recommendations**.

@@ -1,16 +1,14 @@
-# Project 1 — Supply Chain Inventory & Demand Planning Analytics
+# Supply Chain Inventory & Demand Planning Analytics
 
-## Client Case Study: Nexora Industrial Supply & Services Ltd.
-
-> **Note:** Nexora Industrial Supply & Services Ltd. (NISSL) is a fictitious company created for this portfolio project. The dataset is synthetic and is intended to demonstrate supply-chain analytics methods and business decision-making.
+## Nexora Industrial Supply & Services Ltd.
 
 ---
 
-## 1. Company Context
+## 1. Company
 
 ### About Nexora Industrial Supply & Services Ltd.
 
-Nexora Industrial Supply & Services Ltd. (NISSL) is a fictitious industrial supply and distribution company serving customers that require a broad range of operational materials and industrial products.
+Nexora Industrial Supply & Services Ltd. (NISSL) is a industrial supply and distribution company serving customers that require a broad range of operational materials and industrial products.
 
 Its portfolio includes:
 

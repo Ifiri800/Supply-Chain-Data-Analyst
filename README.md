@@ -126,48 +126,6 @@ Key performance indicators include:
 * Carrying Cost
 * Days of Inventory
 * Perfect Order Rate
-
----
-
-## 📁 Repository Structure
-
-```text
-Supply-Chain-Data-Analysis/
-│
-├── README.md
-│
-├── data/
-│   ├── raw/
-│   └── processed/
-│
-├── notebooks/
-│   ├── inventory_analysis/
-│   ├── demand_forecasting/
-│   ├── procurement_analysis/
-│   └── logistics_analysis/
-│
-├── python/
-│   ├── inventory/
-│   ├── forecasting/
-│   ├── procurement/
-│   └── logistics/
-│
-├── sql/
-│   ├── inventory/
-│   ├── procurement/
-│   └── logistics/
-│
-├── excel/
-│   └── models/
-│
-├── dashboards/
-│   └── power_bi/
-│
-├── visualizations/
-│
-└── documentation/
-```
-
 ---
 
 ## 📈 Example Projects
@@ -285,9 +243,6 @@ Visualization
 Insights
    ↓
 Recommendations
-```
-
-The objective is not only to calculate KPIs but to explain **what the numbers mean for supply chain operations**.
 
 ---
 
@@ -349,7 +304,7 @@ Other SQL analysis will include:
 
 ## 📊 Dashboards
 
-Power BI dashboards will be developed to communicate supply chain performance to decision-makers.
+Tableau dashboards will be developed to communicate supply chain performance to decision-makers.
 
 Potential dashboard pages include:
 
@@ -411,8 +366,6 @@ This repository is being developed as a practical **Supply Chain Data Analytics 
 
 > **Collect → Clean → Analyze → Model → Visualize → Interpret → Recommend**
 
-The focus is on translating supply chain data into insights that can support decisions across **inventory, demand planning, procurement, logistics, and operations**.
-
 ---
 
 ## 🚀 Future Development
@@ -430,18 +383,6 @@ Planned additions include:
 * Automated reporting
 * Interactive Power BI dashboards
 * SQL-based supply chain data warehouse projects
-
----
-
-## 👤 About
-
-This repository is part of my professional development in **Supply Chain Data Analytics**, combining supply chain management knowledge with data analysis, visualization, statistical modeling, and business intelligence.
-
-### Core Focus
-
-**Supply Chain Analytics | Inventory Optimization | Demand Planning | Procurement Analytics | Logistics Analytics | Data Visualization | Python | SQL | Power BI**
-
----
 
 ## 📜 License
 
